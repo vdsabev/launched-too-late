@@ -310,8 +310,9 @@
         });
 
         // Features
-        const initialFeatures = new URLSearchParams(window.location.search)
-          .get('features')
+        const initialFeatures = (
+          new URLSearchParams(window.location.search).get('features') || ''
+        )
           .split(',')
           .filter(Boolean)
           .map(Number);

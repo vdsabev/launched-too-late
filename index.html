@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Am I launching too late?</title>
+    <style>
+      :root {
+        --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+
+        /* Colors */
+        --primary: #9333ea;
+        --neutral-0: #ffffff;
+        --neutral-50: #f8fafc;
+        --neutral-100: #f1f5f9;
+        --neutral-200: #e2e8f0;
+        --neutral-300: #cbd5e1;
+        --neutral-400: #94a3b8;
+        --neutral-500: #64748b;
+        --neutral-600: #475569;
+        --neutral-700: #334155;
+        --neutral-800: #1e293b;
+        --neutral-900: #0f172a;
+        --neutral-950: #020617;
+        --neutral-1000: #000000;
+
+        --pattern-charlie-brown: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23475569' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        --pattern-diagonal: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231e293b' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      html,
+      body {
+        margin: 0;
+        background-color: var(--neutral-900);
+        background-image: var(--pattern-diagonal);
+        color: var(--neutral-0);
+      }
+
+      html {
+        box-sizing: border-box;
+        line-height: 1.5;
+      }
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: inherit;
+        border-width: 0;
+        border-style: solid;
+        border-color: var(--neutral-0);
+      }
+
+      body {
+        font-family: var(--font-family);
+        line-height: inherit;
+      }
+
+      input,
+      button {
+        border-radius: 4px;
+        border: 3px solid var(--neutral-900);
+        padding: 0.5rem 0.75rem;
+        color: inherit;
+        font: inherit;
+      }
+
+      button:hover {
+        filter: brightness(1.1);
+        transition: filter 150ms ease-in-out;
+      }
+
+      form {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h1,
+      small {
+        display: block;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+      small {
+        margin-bottom: 1rem;
+        color: var(--neutral-400);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      fieldset {
+        border-radius: 6px;
+        border: 3px solid var(--neutral-900);
+        margin: 0;
+        padding: 1rem 2rem;
+        background-color: var(--neutral-900);
+        background-image: var(--pattern-charlie-brown);
+      }
+
+      section {
+        columns: 1;
+        column-gap: 1rem;
+      }
+
+      @media (min-width: 530px) {
+        section {
+          columns: 2;
+        }
+      }
+
+      @media (min-width: 768px) {
+        section {
+          columns: 3;
+        }
+      }
+
+      label,
+      button {
+        cursor: pointer;
+      }
+
+      label {
+        display: flex;
+        gap: 0.5ch;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form name="quiz">
+      <h1>Am I launching too late?</h1>
+      <small>
+        Based on
+        <a
+          href="https://twitter.com/dvassallo/status/1630813028156579841"
+          target="_blank"
+        >
+          @dvassallo's 36-point "things you absolutely don't need to launch"
+          list
+        </a>
+      </small>
+
+      <fieldset>
+        <h2>What's the name of your project?</h2>
+        <input
+          type="text"
+          name="project"
+          value="your project"
+          spellcheck="false"
+          autofocus
+          style="width: 100%; background-color: var(--neutral-800)"
+        />
+
+        <h2>
+          What features does
+          <b data-name="project">your project</b> have?
+        </h2>
+
+        <section>
+          <label><input name="feature" type="checkbox" />a favicon</label>
+          <label><input name="feature" type="checkbox" />unit tests</label>
+          <label><input name="feature" type="checkbox" />a logo</label>
+          <label><input name="feature" type="checkbox" />an LLC</label>
+          <label><input name="feature" type="checkbox" />tax compliance</label>
+          <label><input name="feature" type="checkbox" />VAT handling</label>
+          <label>
+            <input name="feature" type="checkbox" />a merchant of record
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />terms and conditions
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />a privacy policy
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />a copyright notice
+          </label>
+          <label><input name="feature" type="checkbox" />a trademark</label>
+          <label><input name="feature" type="checkbox" />commit messages</label>
+          <label><input name="feature" type="checkbox" />code reviews</label>
+          <label><input name="feature" type="checkbox" />code comments</label>
+          <label>
+            <input name="feature" type="checkbox" />a deployment system
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />continuous integration
+          </label>
+          <label><input name="feature" type="checkbox" />docker</label>
+          <label><input name="feature" type="checkbox" />a web framework</label>
+          <label><input name="feature" type="checkbox" />monitoring</label>
+          <label><input name="feature" type="checkbox" />pager duty</label>
+          <label><input name="feature" type="checkbox" />reset password</label>
+          <label><input name="feature" type="checkbox" />dark mode</label>
+          <label>
+            <input name="feature" type="checkbox" />a nosql database
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />serverless functions
+          </label>
+          <label><input name="feature" type="checkbox" />cloudflare</label>
+          <label><input name="feature" type="checkbox" />a load balancer</label>
+          <label>
+            <input name="feature" type="checkbox" />a twitter handle
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />multiple pricing plans
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />purchasing power parity
+          </label>
+          <label><input name="feature" type="checkbox" />a blog</label>
+          <label><input name="feature" type="checkbox" />a roadmap</label>
+          <label><input name="feature" type="checkbox" />animations</label>
+          <label><input name="feature" type="checkbox" />a changelog</label>
+          <label><input name="feature" type="checkbox" />venture capital</label>
+          <label>
+            <input name="feature" type="checkbox" />an affiliate program
+          </label>
+          <label>
+            <input name="feature" type="checkbox" />a system status page
+          </label>
+        </section>
+
+        <button
+          type="submit"
+          style="
+            display: block;
+            margin: 2rem auto 1rem auto;
+            background-color: var(--primary);
+          "
+        >
+          Am I launching too late?
+        </button>
+      </fieldset>
+
+      <div id="results"></div>
+    </form>
+
+    <script>
+      const scores = [
+        {
+          max: 9,
+          title: '😊 Right on Time',
+          text: `
+            <p>Well, aren't you a beam of fucking sunshine? You're coasting around on the minimum like a Small Bet slacker, but hey, at least you didn't overcomplicate shit.</p>
+            <p>Now go ahead and launch <b data-name="project">your project</b> already!</p>`,
+        },
+        {
+          max: 18,
+          title: '🤔 Taking a Bit Too Long',
+          text: `
+            <p>Oh, look at Mr. Suckerberg here building the next fucking Facebook. You've got more unnecessary crap than my grandpa's yard sale!<p>
+            <p>Cut it out and launch <b data-name="project">your project</b> already!</p>
+          `,
+        },
+        {
+          max: 27,
+          title: '🥲 Getting Stale',
+          text: `
+            <p>You're like a kid in a toy store, grabbing every shiny, useless piece of crap that catches your beady little eyes. <b data-name="project">Your project</b> smells like my grandma's attic.</p>
+            <p>Get it together and launch, numbnut!</p>`,
+        },
+        {
+          max: 36,
+          title: `😩 It's So Over`,
+          text: `
+            <p>Jesus H. Christ on a pogo stick, <b data-name="project">your project</b> has more bloat than a month-old roadkill!<br />If feature creep was a disease, you'd be fucking terminal.<br />It's got more layers than Peter Askew's fucking onions, and it'll make your users cry!<br />Except you don't have any users.</p>
+            <p>Time to Marie Kondo this shit and get better at marketing before you sink the damn ship!</p>
+          `,
+        },
+      ];
+
+      window.addEventListener('DOMContentLoaded', () => {
+        // Project
+        function updateProjectName(projectName) {
+          document
+            .querySelectorAll('[data-name="project"]')
+            .forEach((element) => {
+              element.textContent = projectName;
+            });
+        }
+
+        const initialProjectName = new URLSearchParams(
+          window.location.search
+        ).get('project');
+        if (initialProjectName) {
+          document.forms.quiz.project.value = initialProjectName;
+        }
+        updateProjectName(initialProjectName);
+
+        document.forms.quiz.project.addEventListener('input', (e) => {
+          const projectName = e.currentTarget.value;
+          updateProjectName(projectName);
+
+          const params = new URLSearchParams(window.location.search);
+          params.set('project', projectName);
+          window.history.replaceState(
+            null,
+            '',
+            window.location.pathname + '?' + params.toString()
+          );
+        });
+
+        // Features
+        const initialFeatures = new URLSearchParams(window.location.search)
+          .get('features')
+          .split(',')
+          .filter(Boolean)
+          .map(Number);
+
+        const features = document.querySelectorAll('input[name=feature]');
+        features.forEach((feature, index) => {
+          feature.checked = initialFeatures.includes(index);
+          feature.addEventListener('change', (e) => {
+            const params = new URLSearchParams(window.location.search);
+            const indices = (params.get('features') || '')
+              .split(',')
+              .filter(Boolean)
+              .map(Number);
+
+            params.set(
+              'features',
+              (indices.includes(index)
+                ? indices.filter((i) => i !== index)
+                : [...indices, index].sort()
+              ).join(',')
+            );
+            window.history.replaceState(
+              null,
+              '',
+              window.location.pathname + '?' + params.toString()
+            );
+
+            if (document.querySelector('#results').innerHTML.length > 0) {
+              updateResult();
+            }
+          });
+        });
+
+        // Result
+        function updateResult() {
+          const numberOfCheckedFeatures = document.querySelectorAll(
+            'input[name="feature"]:checked'
+          ).length;
+
+          const score =
+            scores.find((score) => numberOfCheckedFeatures <= score.max) ||
+            scores[scores.length - 1];
+          document.querySelector('#results').innerHTML = `
+            <h3>${score.title} ${numberOfCheckedFeatures}/${features.length}</h3>
+            ${score.text}
+          `;
+          updateProjectName(document.forms.quiz.project.value);
+        }
+
+        if (initialProjectName || initialFeatures.length > 0) {
+          updateResult();
+        }
+
+        document.forms.quiz.addEventListener('submit', (e) => {
+          e.preventDefault();
+          updateResult();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -286,7 +286,7 @@
           document
             .querySelectorAll('[data-name="project"]')
             .forEach((element) => {
-              element.textContent = projectName;
+              element.textContent = projectName || 'your project';
             });
         }
 
